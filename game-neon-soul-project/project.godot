@@ -44,6 +44,10 @@ right={
 ]
 }
 
+[layer_names]
+
+2d_physics/layer_1="Environment"
+
 [physics]
 
 3d/physics_engine="Jolt Physics"
