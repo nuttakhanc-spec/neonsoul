@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://cewd8wqwmnart" path="res://scenes/entities/player/player.tscn" id="5_smh7c"]
 [ext_resource type="Texture2D" uid="uid://c5e6twwc4j856" path="res://model/Tiny Swords (Free Pack)/Terrain/Decorations/Bushes/Bushe2.png" id="6_5jnh4"]
 [ext_resource type="Texture2D" uid="uid://5xg3l1ccolly" path="res://model/Tiny Swords (Free Pack)/Terrain/Decorations/Bushes/Bushe1.png" id="7_mdxq5"]
+[ext_resource type="PackedScene" uid="uid://dllah8lurspg1" path="res://scenes/entities/enemy/enemy1.tscn" id="10_wnico"]
 [ext_resource type="Texture2D" uid="uid://dla2wftghqwid" path="res://model/Tiny Swords (Free Pack)/Terrain/Resources/Wood/Trees/Tree3.png" id="12_00kvv"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_d31ot"]
@@ -425,6 +426,11 @@ tile_set = SubResource("TileSet_0mo51")
 
 [node name="player" parent="." unique_id=2056250812 instance=ExtResource("5_smh7c")]
 position = Vector2(949, 1068)
+
+[node name="Enemies" type="Node2D" parent="." unique_id=1586078065]
+
+[node name="enemy1" parent="Enemies" unique_id=1169684107 instance=ExtResource("10_wnico")]
+position = Vector2(957, 581)
 
 [node name="Effects" type="Node2D" parent="." unique_id=371720503]
 unique_name_in_owner = true
