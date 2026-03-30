@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://cdeo0ehkk63bk" path="res://model/Tiny Swords (Free Pack)/Terrain/Tileset/Tilemap_color1.png" id="3_p4o1l"]
 [ext_resource type="Texture2D" uid="uid://c8pbea3yrdl0k" path="res://model/Tiny Swords (Free Pack)/Terrain/Tileset/Tilemap_color3.png" id="4_l2lx5"]
 [ext_resource type="Texture2D" uid="uid://cqbfpq7rwjcm0" path="res://model/Tiny Swords (Free Pack)/Terrain/Tileset/Shadow.png" id="4_p4o1l"]
-[ext_resource type="PackedScene" uid="uid://cewd8wqwmnart" path="res://scenes/player/player.tscn" id="5_smh7c"]
+[ext_resource type="PackedScene" uid="uid://cewd8wqwmnart" path="res://scenes/entities/player/player.tscn" id="5_smh7c"]
 [ext_resource type="Texture2D" uid="uid://c5e6twwc4j856" path="res://model/Tiny Swords (Free Pack)/Terrain/Decorations/Bushes/Bushe2.png" id="6_5jnh4"]
 [ext_resource type="Texture2D" uid="uid://5xg3l1ccolly" path="res://model/Tiny Swords (Free Pack)/Terrain/Decorations/Bushes/Bushe1.png" id="7_mdxq5"]
 [ext_resource type="Texture2D" uid="uid://dla2wftghqwid" path="res://model/Tiny Swords (Free Pack)/Terrain/Resources/Wood/Trees/Tree3.png" id="12_00kvv"]
@@ -425,3 +425,6 @@ tile_set = SubResource("TileSet_0mo51")
 
 [node name="player" parent="." unique_id=2056250812 instance=ExtResource("5_smh7c")]
 position = Vector2(949, 1068)
+
+[node name="Effects" type="Node2D" parent="." unique_id=371720503]
+unique_name_in_owner = true

@@ -9,6 +9,7 @@ enum State {
 @export_category("stats")
 @export var speed: int = 400
 @export var attack_speed: float = 0.6
+@export var attack_damage: int = 60
 
 var state: State = State.IDLE
 var move_direction: Vector2 = Vector2(0,0)
@@ -71,3 +72,7 @@ func attack() -> void:
 	await get_tree().create_timer(attack_speed).timeout
 	state = State.IDLE
 	
+
+
+func _on_hitbox_area_entered(area: Area2D) -> void:
+	area.owner.take_damage(attack_damage)

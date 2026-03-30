@@ -1,0 +1,56 @@
+[gd_scene format=3 uid="uid://dcntccf02rmwe"]
+
+[ext_resource type="Script" uid="uid://c4nkm1axr03dm" path="res://scenes/effects/death.gd" id="1_a3gwh"]
+[ext_resource type="Texture2D" uid="uid://b7fdtx7ri1myh" path="res://model/Tiny Swords (Update 010)/Factions/Knights/Troops/Dead/Dead.png" id="2_dv23d"]
+
+[sub_resource type="Animation" id="Animation_lx2nb"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_yxeqw"]
+resource_name = "death"
+length = 1.4
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.90000004, 1, 1.1, 1.2, 1.3000001),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_10op7"]
+_data = {
+&"RESET": SubResource("Animation_lx2nb"),
+&"death": SubResource("Animation_yxeqw")
+}
+
+[node name="Death" type="Node2D" unique_id=586078482]
+script = ExtResource("1_a3gwh")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=717738162]
+position = Vector2(1, 0)
+texture = ExtResource("2_dv23d")
+hframes = 7
+vframes = 2
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1758032399]
+libraries/ = SubResource("AnimationLibrary_10op7")
+
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
